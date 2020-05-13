@@ -1,0 +1,25 @@
+<div [ngClass]="setClasses()">
+  <div *ngIf="todo.completed; else elseBlock">
+    <p>
+      <input
+        (change)="onToggle(todo)"
+        type="checkbox"
+        value="{{ todo.completed }}"
+        checked
+      />
+      {{ todo.title }}
+      <button (click)="onDelete(todo)" class="del">X</button>
+    </p>
+  </div>
+  <ng-template #elseBlock
+    ><p>
+      <input
+        (change)="onToggle(todo)"
+        type="checkbox"
+        value="{{ todo.completed }}"
+      />
+      {{ todo.title }}
+      <button (click)="onDelete(todo)" class="del">X</button>
+    </p></ng-template
+  >
+</div>
